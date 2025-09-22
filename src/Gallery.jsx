@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Gallery = () => {
   const images = [
@@ -10,14 +10,6 @@ const Gallery = () => {
     "https://picsum.photos/400/300?random=6",
   ];
 
-  // keep track of which image is tapped (for mobile zoom)
-  const [activeIndex, setActiveIndex] = useState(null);
-
-  const handleTap = (index) => {
-    // toggle zoom on tap
-    setActiveIndex(activeIndex === index ? null : index);
-  };
-
   return (
     <section className="py-10 bg-gray-100">
       <div className="container mx-auto px-6">
@@ -27,14 +19,12 @@ const Gallery = () => {
           {images.map((img, index) => (
             <div
               key={index}
-              className="group overflow-hidden rounded-xl shadow-lg"
-              onClick={() => handleTap(index)} // for mobile
+              className="overflow-hidden rounded-xl shadow-lg"
             >
               <img
                 src={img}
                 alt={`Gallery ${index + 1}`}
-                className={`w-full h-64 object-cover transform transition-transform duration-500 ease-in-out 
-                ${activeIndex === index ? "scale-125" : "group-hover:scale-125"}`}
+                className="w-full h-64 object-cover transform transition-transform duration-500 ease-in-out hover:scale-125"
               />
             </div>
           ))}
