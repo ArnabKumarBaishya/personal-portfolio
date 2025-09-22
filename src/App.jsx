@@ -2,6 +2,8 @@ import "./App.css";
 import Logo from "./assets/adysun-img.jpg";
 import Weather from "./assets/weather-img.jpg";
 import Api from "./assets/api-img.jpg";
+import Gallery from "./Gallery";
+import Sec from './Sec'
 import { Mail, Github, LaptopMinimal, TvMinimalPlay } from "lucide-react";
 function App() {
   return (
@@ -101,8 +103,10 @@ function App() {
                   alt="logo"
                 />
                 <span className="font-medium">Adysun Ventures Pvt. Ltd.</span>
-                
-                <span className="font-medium"><i>(Aug-2025 - Present)</i></span>
+
+                <span className="font-medium">
+                  <i>(Aug-2025 - Present)</i>
+                </span>
               </div>
             </div>
           </div>
@@ -193,7 +197,7 @@ function App() {
               </div>
               <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
                 <div>
-                  <img className="rounded-t-lg h-55 w-96"  src={Api} alt="" />
+                  <img className="rounded-t-lg h-55 w-96" src={Api} alt="" />
                 </div>
                 <div className="p-5">
                   <div>
@@ -230,6 +234,49 @@ function App() {
               </div>
             </div>
           </div>
+        </section>
+        <section className="container my-12 mx-auto px-6">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12">Dummy Section</h2>
+          <div className="container mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="bg-gray-50 rounded-xl p-6 transition-transform hover:scale-105">
+                <div className="text-3xl font-bold text-blue-600 mb-2">60+</div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                  Projects
+                </h3>
+                <p className="text-gray-600">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Repellendus, numquam.
+                </p>
+              </div>
+              <div className="bg-gray-50 rounded-xl p-6 transition-transform hover:scale-105">
+                <div className="text-3xl font-bold text-blue-600 mb-2">50%</div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                  Web
+                </h3>
+                <p className="text-gray-600">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Exercitationem recusandae aliquam assumenda natus! Sunt, came?
+                </p>
+              </div>
+              <div className="bg-gray-50 rounded-xl p-6 transition-transform hover:scale-105">
+                <div className="text-3xl font-bold text-blue-600 mb-2">30%</div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                  Technical solutions
+                </h3>
+                <p className="text-gray-600">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Minima nisi magni possimus.{" "}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <Gallery />
+        </section>
+        <section>
+          <Sec/>
         </section>
         <section className="py-20  bg-blue-50" id="contact">
           <div className="container mx-auto px-6">
