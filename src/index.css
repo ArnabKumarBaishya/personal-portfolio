@@ -6,8 +6,4 @@ html, body, #root {
   padding: 0;
 }
 /* Enable hover effects on touch devices */
-@media (hover: none) {
-  img:hover {
-    transform: scale(1.25) !important;
-  }
-}
+

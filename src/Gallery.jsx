@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Gallery = () => {
   const images = [
@@ -10,6 +10,9 @@ const Gallery = () => {
     "https://picsum.photos/400/300?random=6",
   ];
 
+  // Track which image is active (finger press on mobile)
+  const [activeIndex, setActiveIndex] = useState(null);
+
   return (
     <section className="py-10 bg-gray-100">
       <div className="container mx-auto px-6">
@@ -20,11 +23,20 @@ const Gallery = () => {
             <div
               key={index}
               className="overflow-hidden rounded-xl shadow-lg"
+              // Mobile press & hold
+              onTouchStart={() => setActiveIndex(index)}
+              onTouchEnd={() => setActiveIndex(null)}
+              onTouchCancel={() => setActiveIndex(null)}
             >
               <img
                 src={img}
                 alt={`Gallery ${index + 1}`}
-                className="w-full h-64 object-cover transform transition-transform duration-500 ease-in-out hover:scale-125"
+                className={`w-full h-64 object-cover transform transition-transform duration-500 ease-in-out 
+                  ${
+                    activeIndex === index
+                      ? "scale-125" // Mobile finger down
+                      : "hover:scale-125" // Desktop hover
+                  }`}
               />
             </div>
           ))}
